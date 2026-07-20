@@ -1,0 +1,284 @@
+:root {
+  --color-main: rgb(200, 200, 200);
+  --color-ofc: black;
+  --color-on: blue;
+
+  --value-main: 10px;
+
+  --text-stroke: 1px var(--color-ofc);
+
+  --an-tm: 2s;
+
+  --shadow: 0 0 20px var(--color-ofc);
+
+  --border: 2px solid var(--color-ofc);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+  font-weight: bolder;
+
+  gap: var(--value-main);
+}
+
+body {
+  min-width: 100%;
+  min-height: 100dvh;
+
+  padding: var(--value-main);
+
+  background-color: var(--color-main);
+
+  display: flex;
+  flex-direction: column;
+
+  animation: an-opacity var(--an-tm) linear;
+}
+
+main {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+}
+
+.Title {
+  color: transparent;
+
+  -webkit-text-stroke: var(--text-stroke);
+
+  position: relative;
+}
+
+.Title::after {
+  content: attr(data-text);
+
+  position: absolute;
+
+  inset: 0;
+
+  color: var(--color-on);
+
+  animation: an-Title var(--an-tm) linear infinite;
+}
+
+.TitleSub {
+  color: transparent;
+
+  -webkit-text-stroke: var(--text-stroke);
+}
+
+article {
+  box-shadow: var(--shadow);
+
+  padding: calc(var(--value-main) * 2.5);
+
+  border-radius: var(--value-main);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 600px;
+  width: 100%;
+}
+
+#article_data {
+  display: none;
+}
+
+#article_results {
+  display: none;
+}
+
+.header-data {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  width: 100%;
+
+  text-align: left;
+}
+
+input {
+  width: 100%;
+
+  padding: calc(var(--value-main) / 2);
+
+  border: var(--border);
+  border-radius: var(--value-main);
+
+  background: transparent;
+
+  outline: none;
+}
+
+input:focus {
+  box-shadow: var(--shadow);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+button {
+  width: 100%;
+
+  padding: var(--value-main);
+
+  background-color: var(--color-on);
+
+  border: var(--border);
+  border-radius: var(--value-main);
+
+  box-shadow: var(--shadow);
+
+  cursor: pointer;
+
+  color: var(--color-main);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button.secondary {
+  background-color: transparent;
+
+  color: var(--color-on);
+}
+
+button.small {
+  width: auto;
+
+  padding: calc(var(--value-main) / 2) var(--value-main);
+}
+
+.element_alert {
+  position: fixed;
+
+  left: 50%;
+  bottom: var(--value-main);
+
+  transform: translateX(-50%);
+
+  padding: var(--value-main);
+
+  background-color: var(--color-on);
+
+  border: var(--border);
+  border-radius: var(--value-main);
+
+  box-shadow: var(--shadow);
+
+  color: var(--color-main);
+
+  animation: an-opacity var(--an-tm) linear;
+}
+
+.notes-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+  width: 100%;
+}
+
+.students-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.student-card {
+  background-color: var(--color-main);
+
+  border: var(--border);
+  border-radius: var(--value-main);
+
+  padding: var(--value-main);
+
+  box-shadow: var(--shadow);
+
+  animation: an-opacity var(--an-tm) linear;
+}
+
+.student-card h4 {
+  color: var(--color-ofc);
+}
+
+.student-card p {
+  color: #666;
+}
+
+.student-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.student-details {
+  flex: 1;
+}
+
+.student-result {
+  text-align: right;
+}
+
+.average-value {
+  color: var(--color-on);
+}
+
+.status-approved {
+  color: green;
+}
+
+.status-rejected {
+  color: orange;
+}
+
+@keyframes an-Title {
+  0% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  50% {
+    clip-path: inset(100% 0% 0% 0%);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes an-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

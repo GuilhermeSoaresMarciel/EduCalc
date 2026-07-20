@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduCalc</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script defer src="scripts.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1 class="Title" data-text="EduCalc">EduCalc</h1>
+
+        <h2 class="TitleSub">Calculadora de Média Escolar</h2>
+
+    </header>
+
+    <main>
+
+        <article id="article_config">
+
+            <h3 class="TitleSub">Configurações</h3>
+
+            <label for="min-grade">Nota Mínima para Passar</label>
+
+            <input type="number" id="min-grade" value="7" step="0.1" min="0" max="10" placeholder="EX: 10">
+
+            <label for="num-notes">Quantidade de Notas</label>
+
+            <input type="number" id="num-notes" value="3" min="1" max="10" placeholder="EX: 10">
+
+            <label for="divisor">Divisor da Média</label>
+
+            <input type="number" id="divisor" value="3" min="1" max="10" placeholder="EX: 10">
+
+            <button id="btn-next-config">Próximo</button>
+
+        </article>
+
+        <article id="article_data">
+
+            <div class="header-data">
+
+                <h3 class="TitleSub">Dados do Aluno</h3>
+
+                <button id="btn-back-config" class="secondary small">Alterar Configuração</button>
+
+            </div>
+
+            <label for="student-name">Nome do Aluno</label>
+
+            <input type="text" id="student-name" placeholder="Ex: Guilherme" autocomplete="off">
+
+            <label for="student-grade-level">Série/Ano</label>
+
+            <input type="text" id="student-grade-level" placeholder="Ex: 9º Ano A" autocomplete="off">
+
+            <label>Notas</label>
+
+            <div id="notes-container" class="notes-grid"></div>
+
+            <button id="btn-calculate">Adicionar Aluno</button>
+
+        </article>
+
+        <article id="article_results">
+
+            <h3 class="TitleSub">Alunos Registrados</h3>
+
+            <div id="students-list" class="students-list"></div>
+
+        </article>
+
+    </main>
+
+    <footer>
+
+        <h6>EduCalc - Calculadora de Média Escolar</h6>
+
+        <h5>Desenvolvido para professores</h5>
+
+        <h4>Developed by: <u>Guilherme Soares Marciel</u></h4>
+
+    </footer>
+
+</body>
+
+</html>
